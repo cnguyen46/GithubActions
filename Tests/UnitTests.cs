@@ -31,5 +31,13 @@ namespace GithubActionsLab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+
+        [Test]
+        public void Power_Valid_Cong_Nguyen()
+        {
+            Assert.AreEqual(4, Program.Power("2", "2"));
+            Assert.AreEqual(-27, Program.Power("-3", "3"));
+            Assert.AreEqual(25, Program.Power("-5", "2"));
+        }
     }
 }
