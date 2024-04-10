@@ -40,6 +40,21 @@ namespace GithubActionsLab
             Assert.AreEqual(25, Program.Power("-5", "2"));
         }
 
-        // This is the second test
+        [Test]
+        public void Power_Invalid_Cong_Nguyen()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_Null_Cong_Nguyen()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
+    
     }
 }
