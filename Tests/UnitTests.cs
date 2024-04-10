@@ -39,5 +39,7 @@ namespace GithubActionsLab
             Assert.AreEqual(-27, Program.Power("-3", "3"));
             Assert.AreEqual(25, Program.Power("-5", "2"));
         }
+
+        // This is the second test
     }
 }
