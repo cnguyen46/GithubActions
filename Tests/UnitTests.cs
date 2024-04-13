@@ -31,5 +31,30 @@ namespace GithubActionsLab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+
+        [Test]
+        public void Power_Valid_Cong_Nguyen()
+        {
+            Assert.AreEqual(4, Program.Power("2", "2"));
+            Assert.AreEqual(-27, Program.Power("-3", "3"));
+            Assert.AreEqual(25, Program.Power("-5", "2"));
+        }
+
+        [Test]
+        public void Power_Invalid_Cong_Nguyen()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_Null_Cong_Nguyen()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
+    
     }
 }
